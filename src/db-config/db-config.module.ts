@@ -18,9 +18,9 @@ const dbConfig = new DbConfig();
           rejectUnauthorized: false, // Para aceitar certificados não verificados
         },
         url: "postgresql://vivo_fiap_user:bm904STL29XNp6fGqf8yLTL5XVAwnQpp@dpg-croaqti3esus73bvqp9g-a.oregon-postgres.render.com/vivo_fiap",
-        synchronize: false,
+        synchronize: true,
         logging: true,
-        entities: [],
+        entities: [Canais, User, Plano, Categoria],
       }),
     }),
   ],

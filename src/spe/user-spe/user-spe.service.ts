@@ -28,6 +28,14 @@ export class UserSpeService {
     return user;
   }
 
+  async findOneEmail(email: string) {
+    const user = await this.userRepository.findByEmail(email);
+    if (!user) {
+      throw new Error(`User with email ${email} not found`);
+    }
+    return user;
+  }
+
   // Método para atualizar um usuário existente por ID
   async update(id: number, updateUserSpeDto: UpdateUserSpeDto) {
     const updatedUser = await this.userRepository.update(id, updateUserSpeDto);

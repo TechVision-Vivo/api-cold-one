@@ -63,4 +63,8 @@ export class UserRepository {
   async findByPlan(planId: number): Promise<User[]> {
     return this.repository.find({ where: { id_plano: planId } });
   }
+
+  async findByEmail(email: string): Promise<User[]> {
+    return this.repository.find({ where: { email : email } });
+  }
 }

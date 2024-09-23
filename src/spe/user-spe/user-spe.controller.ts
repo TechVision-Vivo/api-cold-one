@@ -30,6 +30,11 @@ export class UserSpeController {
     return this.userSpeService.findOne(+id);
   }
 
+  @Get('/email/:email')
+  findOneEmail(@Param('email') email: string) {
+    return this.userSpeService.findOneEmail(email);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserSpeDto: UpdateUserSpeDto) {
     return this.userSpeService.update(+id, updateUserSpeDto);
