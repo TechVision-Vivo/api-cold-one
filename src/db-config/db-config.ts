@@ -2,6 +2,11 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 export class DbConfig {
+
+  getName(): string{
+    return process.env.DB_NAME || null; 
+  }
+  
   // Método para obter o host do banco de dados
   getHost(): string {
     return process.env.DB_HOST || null;
